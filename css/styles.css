@@ -10212,3 +10212,14 @@ body {
 .sb-sidenav-light .sb-sidenav-footer {
   background-color: #e9ecef;
 }
+
+
+
+/*custom css*/
+
+#loginBody{
+  background: url('../assets/img/bg.jpg');
+  background-repeat: repeat-y;
+  background-size: cover;
+  background-blend-mode: multiply;
+}

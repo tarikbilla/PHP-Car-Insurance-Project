@@ -114,19 +114,19 @@ if(isset($_POST['reg'])){
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Page Title - SB Admin</title>
+        <title>Registration</title>
         <link href="css/styles.css" rel="stylesheet" />
         <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/js/all.min.js" crossorigin="anonymous"></script>
     </head>
-    <body class="bg-primary">
+    <body class="" id="loginBody">
         <div id="layoutAuthentication">
             <div id="layoutAuthentication_content">
                 <main>
-                    <div class="container">
+                    <div class="container mb-4">
                         <div class="row justify-content-center">
                             <div class="col-lg-7">
                                 <div class="card shadow-lg border-0 rounded-lg mt-5">
-                                    <div class="card-header"><h3 class="text-center font-weight-light my-4">Create Account</h3></div>
+                                    <div class="card-header"><h3 class="text-center font-weight-light my-4 font-weight-bold">Create Account</h3></div>
                                     <div class="card-body">
                                         <?php
                                             //check for any errors
@@ -139,35 +139,46 @@ if(isset($_POST['reg'])){
                                         <form action="" method="post">
                                             <div class="form-row">
                                                 <div class="col-md-6">
-                                                    <div class="form-group"><label class="small mb-1" for="inputFirstName">First Name</label><input class="form-control py-4" id="inputFirstName" type="text" placeholder="Enter first name" /></div>
+                                                    <div class="form-group">
+                                                        <label class="small mb-1 font-weight-bold" for="inputFirstName">First Name <i class="text-danger">*</i></label>
+                                                        <input class="form-control py-4" id="inputFirstName" type="text" placeholder="Enter first name" required /></div>
                                                 </div>
                                                 <div class="col-md-6">
-                                                    <div class="form-group"><label class="small mb-1" for="inputLastName">Last Name</label><input class="form-control py-4" id="inputLastName" type="text" placeholder="Enter last name" /></div>
+                                                    <div class="form-group">
+                                                        <label class="small mb-1 font-weight-bold" for="inputLastName">Last Name <i class="text-danger">*</i></label>
+                                                        <input class="form-control py-4" id="inputLastName" type="text" placeholder="Enter last name" required /></div>
                                                 </div>
                                             </div>
                                             <div class="form-group">
-                                                <label class="small mb-1" for="inputEmailAddress">UserName</label>
+                                                
+                                                <label class="small mb-1 font-weight-bold" for="inputEmailAddress">UserName <i class="text-danger">*</i></label>
                                                 <input class="form-control py-4" name="username" id="inputEmailAddress" type="text" aria-describedby="emailHelp" placeholder="Enter Username" required />
                                             </div>
 
                                             <div class="form-group">
-                                                <label class="small mb-1" for="inputEmailAddress">Email</label>
+                                                
+                                                <label class="small mb-1 font-weight-bold" for="inputEmailAddress">Email <i class="text-danger">*</i></label>
                                                 <input class="form-control py-4" name="email" id="inputEmailAddress" type="email" aria-describedby="emailHelp" placeholder="Enter email address" required /></div>
                                             <div class="form-row">
                                                 <div class="col-md-6">
-                                                    <div class="form-group"><label class="small mb-1" for="inputPassword">Password</label><input class="form-control py-4" name="password" id="inputPassword" type="password" placeholder="Enter password" required /></div>
+                                                    <div class="form-group">
+                                                        <label class="small mb-1 font-weight-bold" for="inputPassword">Password <i class="text-danger">*</i></label>
+                                                        <input class="form-control py-4" name="password" id="inputPassword" type="password" placeholder="Enter password" required /></div>
                                                 </div>
                                                 <div class="col-md-6">
-                                                    <div class="form-group"><label class="small mb-1" for="inputConfirmPassword">Confirm Password</label><input class="form-control py-4" name="passwordConfirm" id="inputConfirmPassword" type="password" placeholder="Confirm password" required /></div>
+                                                    <div class="form-group">
+                                                        <label class="small mb-1 font-weight-bold" for="inputConfirmPassword">Confirm Password <i class="text-danger">*</i></label>
+                                                        <input class="form-control py-4" name="passwordConfirm" id="inputConfirmPassword" type="password" placeholder="Confirm password" required /></div>
                                                 </div>
                                             </div>
                                             <div class="form-group mt-4 mb-0">
+                                                
                                                 <input type="submit" name="reg" class="btn btn-primary btn-block" value="Create Account">
                                             </div>
                                         </form>
                                     </div>
                                     <div class="card-footer text-center">
-                                        <div class="small"><a href="register.html">Have an account? Go to login</a></div>
+                                        <div class="small"><a href="login.php">Have an account? Go to login</a></div>
                                     </div>
                                 </div>
                             </div>
@@ -175,7 +186,7 @@ if(isset($_POST['reg'])){
                     </div>
                 </main>
             </div>
-            <div id="layoutAuthentication_footer">
+            <!-- <div id="layoutAuthentication_footer">
                 <footer class="py-4 bg-light mt-auto">
                     <div class="container-fluid">
                         <div class="d-flex align-items-center justify-content-between small">
@@ -188,7 +199,7 @@ if(isset($_POST['reg'])){
                         </div>
                     </div>
                 </footer>
-            </div>
+            </div> -->
         </div>
         <script src="https://code.jquery.com/jquery-3.4.1.min.js" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
