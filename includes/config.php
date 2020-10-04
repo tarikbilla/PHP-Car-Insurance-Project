@@ -3,13 +3,13 @@ ob_start();
 session_start();
 
 //set timezone
-date_default_timezone_set('Europe/London');
+date_default_timezone_set('Asia/Dhaka');
 
 //database credentials
 define('DBHOST','localhost');
 define('DBUSER','root');
 define('DBPASS','');
-define('DBNAME','gh_tech');
+define('DBNAME','insurance_pro');
 
 //application address
 define('DIR','http://domain.com/');

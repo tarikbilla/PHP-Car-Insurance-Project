@@ -1,3 +1,4 @@
+<?php $site_title="Insurance"; ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,7 +10,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>SB Admin 2 - Dashboard</title>
+  <title><?php if (isset($site_title)) {echo $site_title;} ?> - Dashboard</title>
 
   <!-- Custom fonts for this template-->
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -18,11 +19,14 @@
   <!-- Custom styles for this template-->
   <link href="css/sb-admin-2.min.css" rel="stylesheet">
 
+  <!-- Custom styles for this page -->
+  <link href="vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
 </head>
 
 <body id="page-top">
 
   <?php require('includes/config.php');?>
+  <?php require('functions.php');?>
   <?php if( !$user->is_logged_in() ){ header('Location: login.php'); exit(); }?>
 
   <!-- Page Wrapper -->

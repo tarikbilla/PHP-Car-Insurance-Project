@@ -10,6 +10,9 @@ if(isset($_POST['reg'])){
     if (!isset($_POST['email'])) $error[] = "Please fill out all fields";
     if (!isset($_POST['password'])) $error[] = "Please fill out all fields";
 
+    $fname = $_POST['fname'];
+    $lname = $_POST['lname'];
+    $phoneNo = $_POST['phoneNo'];
     $username = $_POST['username'];
 
     //very basic validation
@@ -66,20 +69,26 @@ if(isset($_POST['reg'])){
         try {
 
             //insert into database with a prepared statement
-            $stmt = $db->prepare('INSERT INTO members (username,password,email,active) VALUES (:username, :password, :email, :active)');
+            $stmt = $db->prepare('INSERT INTO members (first_name,  last_name,phone_no,username,password,email,active,profile_pic_path,active_status,balance) VALUES (:first_name,:last_name,:phone_no,:username, :password, :email, :active,:profile_pic_path,:active_status,:balance)');
             $stmt->execute(array(
+                ':first_name' => $fname,
+                ':last_name' => $lname,
+                ':phone_no' => $phoneNo,
                 ':username' => $username,
                 ':password' => $hashedpassword,
                 ':email' => $email,
-                ':active' => "Yes"
+                ':active' => "Yes",
+                ':profile_pic_path' => "img/default_profile_pic.png",
+                ':active_status' => "No",
+                ':balance' => "0"
             ));
             $id = $db->lastInsertId('memberID');
 
             //send email
             $to = $_POST['email'];
             $subject = "Registration Confirmation";
-            $body = "<p>Thank you for registering at demo site.</p>
-            <p>To activate your account, please click on this link: <a href='".DIR."activate.php?x=$id&y=$activasion'>".DIR."activate.php?x=$id&y=$activasion</a></p>
+            $body = "<p>Thank you for registering at Insurance site.</p>
+            <p>Your Login Details: <br>username:$Username<br>Password:".$_POST['password']."</p>
             <p>Regards Site Admin</p>";
 
             $mail = new Mail();
@@ -141,19 +150,28 @@ if(isset($_POST['reg'])){
                                                 <div class="col-md-6">
                                                     <div class="form-group">
                                                         <label class="small mb-1 font-weight-bold" for="inputFirstName">First Name <i class="text-danger">*</i></label>
-                                                        <input class="form-control py-4" id="inputFirstName" type="text" placeholder="Enter first name" required /></div>
+                                                        <input name="fname" class="form-control py-4" id="inputFirstName" type="text" placeholder="Enter first name" required /></div>
                                                 </div>
                                                 <div class="col-md-6">
                                                     <div class="form-group">
                                                         <label class="small mb-1 font-weight-bold" for="inputLastName">Last Name <i class="text-danger">*</i></label>
-                                                        <input class="form-control py-4" id="inputLastName" type="text" placeholder="Enter last name" required /></div>
+                                                        <input name="lname" class="form-control py-4" id="inputLastName" type="text" placeholder="Enter last name" required /></div>
                                                 </div>
                                             </div>
-                                            <div class="form-group">
-                                                
-                                                <label class="small mb-1 font-weight-bold" for="inputEmailAddress">UserName <i class="text-danger">*</i></label>
-                                                <input class="form-control py-4" name="username" id="inputEmailAddress" type="text" aria-describedby="emailHelp" placeholder="Enter Username" required />
+                                            <div class="form-row">
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label class="small mb-1 font-weight-bold" for="inputEmailAddress">UserName <i class="text-danger">*</i></label>
+                                                        <input class="form-control py-4" name="username" id="inputEmailAddress" type="text" aria-describedby="emailHelp" placeholder="Enter Username" required />
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label class="small mb-1 font-weight-bold" for="inputLastName">Phone No: <i class="text-danger">*</i></label>
+                                                        <input class="form-control py-4" name="phoneNo" id="inputPhoneNo" type="text" placeholder="Enter Phone Number" required /></div>
+                                                </div>
                                             </div>
+                                            
 
                                             <div class="form-group">
                                                 
