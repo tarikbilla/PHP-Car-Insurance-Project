@@ -48,7 +48,6 @@
             <div class="col-6">
               <!-- add Categories -->
               <div class="card shadow mb-4">
-                
                 <?php 
                 if (isset($msg)) {
                   echo '<div class="card-header text-success">'.$msg.'</div>';

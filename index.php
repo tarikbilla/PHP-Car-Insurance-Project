@@ -13,7 +13,7 @@
           </div>
 
           <?php if (is_admin()){?>
-          <!-- Admin Panel -->
+          <!--=========== Admin Panel ==============-->
           <div class="row">
             <!-- Earnings (Monthly) Card Example -->
             <div class="col-xl-3 col-md-6 mb-4">
@@ -139,16 +139,16 @@
 
           <?php }else {?>
 
-          <!-- User Panel -->
+          <!-- ============User Panel ================-->
           <div class="row">
-            <!-- Earnings (Monthly) Card Example -->
+            <!-- Card  -->
             <div class="col-xl-3 col-md-6 mb-4">
               <div class="card border-left-primary shadow h-100 py-2">
                 <div class="card-body">
                   <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
                       <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">My ID</div>
-                      <div class="h5 mb-0 font-weight-bold text-gray-800">1001</div>
+                      <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo "000".$_SESSION['memberID']; ?></div>
                     </div>
                     <div class="col-auto">
                       <i class="fas fa-calendar fa-2x text-gray-300"></i>
@@ -158,7 +158,7 @@
               </div>
             </div>
 
-            <!-- Earnings (Monthly) Card Example -->
+            <!-- Card  -->
             <div class="col-xl-3 col-md-6 mb-4">
               <div class="card border-left-success shadow h-100 py-2">
                 <div class="card-body">
@@ -175,40 +175,45 @@
               </div>
             </div>
 
-            <!-- Earnings (Monthly) Card Example -->
+            <!-- Card  -->
             <div class="col-xl-3 col-md-6 mb-4">
               <div class="card border-left-info shadow h-100 py-2">
                 <div class="card-body">
-                  <div class="row no-gutters align-items-center">
-                    <div class="col mr-2">
-                      <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Insurance List</div>
-                      <div class="row no-gutters align-items-center">
-                        <div class="col-auto">
-                          <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">0</div>
+                  <a href="insuranceList.php">
+                    <div class="row no-gutters align-items-center">
+                      <div class="col mr-2">
+                        <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Insurance List</div>
+                        <div class="row no-gutters align-items-center">
+                          <div class="col-auto">
+                            <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800"><?php echo total_insurance($db); ?></div>
+                          </div>
                         </div>
                       </div>
+                      <div class="col-auto">
+                        <i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
+                      </div>
                     </div>
-                    <div class="col-auto">
-                      <i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
-                    </div>
-                  </div>
+                  </a>
                 </div>
               </div>
             </div>
+            </a>
 
-            <!-- Pending Requests Card Example -->
+            <!-- Card  -->
             <div class="col-xl-3 col-md-6 mb-4">
               <div class="card border-left-warning shadow h-100 py-2">
                 <div class="card-body">
-                  <div class="row no-gutters align-items-center">
-                    <div class="col mr-2">
-                      <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">New Message</div>
-                      <div class="h5 mb-0 font-weight-bold text-gray-800">5</div>
+                  <a href="message.php">
+                    <div class="row no-gutters align-items-center">
+                      <div class="col mr-2">
+                        <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">New Message</div>
+                        <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo total_unseen_meg($db); ?></div>
+                      </div>
+                      <div class="col-auto">
+                        <i class="fas fa-envelope fa-2x text-gray-300"></i>
+                      </div>
                     </div>
-                    <div class="col-auto">
-                      <i class="fas fa-envelope fa-2x text-gray-300"></i>
-                    </div>
-                  </div>
+                  </a>
                 </div>
               </div>
             </div>

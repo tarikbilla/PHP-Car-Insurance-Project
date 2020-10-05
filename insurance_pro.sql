@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 04, 2020 at 07:23 PM
+-- Generation Time: Oct 05, 2020 at 07:53 PM
 -- Server version: 10.1.38-MariaDB
 -- PHP Version: 7.1.28
 
@@ -81,7 +81,7 @@ CREATE TABLE `insurance` (
 
 INSERT INTO `insurance` (`id`, `name_of_insured`, `father_name`, `mobile_no`, `address`, `vehicle_brand`, `reg_no`, `hp_cc`, `type_of_body`, `sets_ton`, `year_of_model`, `engine_no`, `chassis_no`, `start_date`, `entry_date`, `entry_time`, `fees`, `entry_user_id`, `status`) VALUES
 (1, 'tarik', 'mohashin', '01884414000', 'jessore', 'Pulser', '2011456', '654', '1', '1', '2020', '236521', '236522554', '2020-10-15', '04-10-2020', '', '200', '5', 'No'),
-(2, 'tarik', 'mohashin', '01884414000', 'jessore', 'Pulser', '2011456', '654', '1', '1', '2020', '236521', '236522554', '2020-10-15', '04-10-2020', '22:43:18', '200', '5', 'No');
+(2, 'tarik', 'mohashin', '01884414000', 'jessore', 'Pulser', '2011456', '654', '1', '1', '2020', '236521', '236522554', '2020-10-15', '04-10-2020', '22:43:18', '200', '4', 'No');
 
 -- --------------------------------------------------------
 
@@ -118,10 +118,38 @@ INSERT INTO `members` (`memberID`, `rules`, `username`, `password`, `email`, `ph
 (2, 'engineer', 'tarik', '$2y$10$U.Tq1JqGGQyYLCqsYTWxQOWvZ8snptC.9BFhYJvN/bsYzeZfhnFjy', 'tarik@gmail.com', '01700112233', 'Tarik', 'billa', 'male', 'jessore', 'img/profile_pic/tarik.jpg', 'Yes', NULL, 'No', '', '0', 'Yes'),
 (3, 'engineer', 'tarik01', '$2y$10$D7jkUVKiTJYGW3Jkat8Us.pvezqVIbPwY7dGRTst4BV.wy2cNy.B.', 'tarik@gmail.com', '0170011223', 'tarik', 'Billa', 'other', 'jessore', 'img/profile_pic/tarik01.jpg', 'f2e0d6ff7781584730e5dab1db0dab95', NULL, 'No', 'admin', '0', 'Yes'),
 (4, '', 'tarikbd', '$2y$10$PEeJcWZU47GbMsD39.soweVvViYuHEZCJjEhz3G6qnipqj2DLijum', 'tarikbilla@gmail.com', '', '', '', '', '', '', 'Yes', NULL, 'No', '', '0', 'No'),
-(5, '', 'tarik0001', '$2y$10$6ZYTw9J.42cSzX4LYUgeLu93tvKSUS8Or2QBVxJOABQb7tUQ548CC', 'plabon@gmail.com', '01884414000', 'tarik', 'billa', '', '', '', 'Yes', NULL, 'No', '', '0', ''),
+(5, '', 'tarik0001', '$2y$10$6ZYTw9J.42cSzX4LYUgeLu93tvKSUS8Or2QBVxJOABQb7tUQ548CC', 'plabon@gmail.com', '01884414000', 'tarik', 'billa', '', '', '', 'Yes', NULL, 'No', '', '0', 'Yes'),
 (6, '', 'tarik0002', '$2y$10$hUypLx8YdekMQWFk0qC0i.my/1e7Ug2.VfKt89/1UMu0vg14Y9r56', 'plabo0n@gmail.com', '01884414000', 'tarik', 'billa', '', '', '', 'Yes', NULL, 'No', '', '0', ''),
 (7, '', 'tarik0003', '$2y$10$r2CbxTKaAs8ynvbVsTQuR.dHp52u1a7caGkKHVjMv577Er0cJu3bm', 'plabo00n@gmail.com', '01884414000', 'tarik', 'billa', '', '', 'img/default_profile_pic.png', 'Yes', NULL, 'No', '', '0', 'No'),
 (8, '', 'tar', '$2y$10$4HZkS3Uazssbmk.RAI1z7uZf3ADF4fTHXpHrNqAFvAlLOKN4k6TxS', 'tinni.aktar.562@tar.tar', 'tar', 'tarik', 'bd', '', '', 'img/default_profile_pic.png', 'Yes', NULL, 'No', '', '0', 'No');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `message`
+--
+
+CREATE TABLE `message` (
+  `id` int(11) NOT NULL,
+  `user_id` int(15) NOT NULL,
+  `sender_id` varchar(250) NOT NULL,
+  `msg_title` varchar(255) NOT NULL,
+  `msg_description` varchar(250) NOT NULL,
+  `msg_date` varchar(255) NOT NULL,
+  `msg_time` varchar(255) NOT NULL,
+  `seen_status` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `message`
+--
+
+INSERT INTO `message` (`id`, `user_id`, `sender_id`, `msg_title`, `msg_description`, `msg_date`, `msg_time`, `seen_status`) VALUES
+(1, 3, '1', 'Send', 'At this time we decide that give an 80% Offer for new Insurance.', '05-10-2020', '22:38:00', ''),
+(2, 3, '1', 'Send', 'At this time we decide that give an 80% Offer for new Insurance.', '05-10-2020', '22:39:19', ''),
+(3, 5, '1', 'Send 2', 'At this time we decide that give an 80% Offer for new Insurance.', '05-10-2020', '22:39:38', 'No'),
+(4, 3, '1', 'Send', 'At this time we decide that give an 80% Offer for new Insurance.', '05-10-2020', '22:39:58', ''),
+(5, 5, '1', 'Supper Offer!!!', 'Supper Offer!!! Supper Offer!!!Supper Offer!!! Supper Offer!!!Supper Offer!!! Supper Offer!!!Supper Offer!!! Supper Offer!!!Supper Offer!!! Supper Offer!!!', '05-10-2020', '23:28:30', 'No');
 
 --
 -- Indexes for dumped tables
@@ -146,6 +174,12 @@ ALTER TABLE `members`
   ADD PRIMARY KEY (`memberID`);
 
 --
+-- Indexes for table `message`
+--
+ALTER TABLE `message`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -166,6 +200,12 @@ ALTER TABLE `insurance`
 --
 ALTER TABLE `members`
   MODIFY `memberID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
+-- AUTO_INCREMENT for table `message`
+--
+ALTER TABLE `message`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

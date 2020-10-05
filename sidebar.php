@@ -87,6 +87,13 @@
           <i class="fas fa-fw fa-chart-area"></i>
           <span>Statement</span></a>
       </li>
+
+      <!-- Nav Item - Utilities Collapse Menu -->
+      <li class="nav-item">
+        <a class="nav-link" href="message.php">
+          <i class="fas fa-fw fa-envelope"></i>
+          <span>Messages</span></a>
+      </li>
       <!-- Divider -->
       <hr class="sidebar-divider d-none d-md-block">
 
